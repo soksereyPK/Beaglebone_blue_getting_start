@@ -22,3 +22,11 @@ Reference [Link1](https://stackoverflow.com/questions/28854705/executing-a-scrip
 ```
 $ sudo reboot now
 ```
+### Check the service at runtime
+```
+ systemctl status myFancy.service
+ systemctl stop myFancy.service
+ systemctl start myFancy.service
+ systemctl disable myFancy.service
+ ```
+
