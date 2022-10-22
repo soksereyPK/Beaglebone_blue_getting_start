@@ -24,9 +24,9 @@ $ sudo reboot now
 ```
 ### Check the service at runtime
 ```
- systemctl status myFancy.service
- systemctl stop myFancy.service
- systemctl start myFancy.service
- systemctl disable myFancy.service
+ systemctl status <name of service file>
+ systemctl stop <name of service file>
+ systemctl start <name of service file>
+ systemctl disable <name of service file>
  ```
 
