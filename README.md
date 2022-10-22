@@ -13,11 +13,12 @@ Reference [Link1](https://stackoverflow.com/questions/28854705/executing-a-scrip
 | Save and grant execute permission |`$ sudo chmod u+x /usr/bin/<name of bash file>`|
 | Create the service |`$ sudo nano /lib/systemd/system/<name of service file> Ex(FAVservice.service)`|
 | Type in service script|`[Unit]`<br />`Description=description of code`<br />`After=syslog.target network.target`<br />`[Service]`<br />`Type=simple`<br />`ExecStart=/usr/bin/<name of bash file>`<br />`[Install]`<br />`WantedBy=multi-user.target`|
-
+| Create a symbolic link to let the device know the location of the service |`$ sudo ln -s /lib/systemd/system/<name of service file> /etc/systemd/system/<name of service file>`|
+| Make systemd aware of your new service|`sudo systemctl daemon-reload`<br />`sudo systemctl enable <name of service file>`<br />`sudo systemctl start <name of service file>`|
 
 
 
 ### Shutdown BBB
 ```
-$ sudo shutdown now
+$ sudo reboot now
 ```
