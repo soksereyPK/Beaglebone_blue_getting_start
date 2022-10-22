@@ -5,11 +5,14 @@ Reference [Link1](https://stackoverflow.com/questions/28854705/executing-a-scrip
 
 | Instruction | Command |
 |------------ | --------|
-| Go to /usr/bin | `$ cd /usr/bin `|
-| Create sh file | `$ touch myfunction.sh`|
-| Edit the file content | `$ nano myfunction.sh`|
-| In file content, Put in | `#!/bin/bash`<br />`cd ~/folder/ # this line is go to the directory of the executable code`<br />`./funtion # this line is for executing the programe (can be sudo python3 function.py)` |
-| Save and Make the file executable | `$ sudo chmod u+x myfunction.sh` |
+| Go to root | `$ cd ~/`|
+| Create folder  | `$ mkdir <folder name>`|
+| Put simulink files inside folder ||
+| Create a bash script that will launch the code at boot/startup | `$ cd /usr/bin/nano <bash file name> Ex(FAVBash.sh)` |
+| Type in bash script | `$ #!/bin/bash`<br />`$ cd /home/debian/<name of folder>`<br />`$ sudo ./<name of simulink files> Ex(FAV.elf)` |
+| Save and grant execute permission |`$ sudo chmod u+x /usr/bin/<name of bash file>`|
+| Create the service |`$ sudo nano /lib/systemd/system/<name of service file> Ex(FAVservice.service)`|
+| Type in service script|`[Unit]`<br />`Description=description of code`<br />`After=syslog.target network.target`<br />`[Service]`<br />`Type=simple`<br />`ExecStart=/usr/bin/<name of bash file>`<br />`[Install]`<br />`WantedBy=multi-user.target`|
 
 
 
